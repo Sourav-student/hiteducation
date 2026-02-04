@@ -1,0 +1,89 @@
+"use client";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
+type QueryType = {
+  year: string;
+  semester: string;
+  department: string;
+};
+
+type PdfItem = {
+  url: string;
+  subject: string;
+};
+
+type QuestionsType = {
+  _id: string;
+  year: string;
+  department: string;
+  semester: string;
+  pdfs: PdfItem[];
+};
+
+export default function PdfCard({ year, semester, department }: QueryType) {
+  const [allQuestions, setAllQuestions] = useState<QuestionsType[]>([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    if (!year || !semester || !department) return;
+
+    const getAllPdfs = async () => {
+      try {
+        setLoading(true);
+
+        const res = await axios.get(
+          `${process.env.NEXT_PUBLIC_BACKEND_URL}/pdfs/all`,
+          { params: { year, semester, department } }
+        );
+
+        setAllQuestions(res.data.pdfs);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    getAllPdfs();
+  }, [year, semester, department]);
+
+  if (loading) {
+    return <p className="text-neutral-400">Loading PDFs...</p>;
+  }
+
+  if (allQuestions.length === 0) {
+    return <p className="text-neutral-500">No PDFs found</p>;
+  }
+
+  return (
+    <>
+      {allQuestions.map((question) =>
+        question.pdfs.map((pdf, index) => (
+          <div
+            key={`${question._id}-${index}`}
+            className="bg-neutral-900 p-6 rounded-xl border border-neutral-800 hover:border-indigo-600 transition"
+          >
+            <h3 className="font-semibold text-lg mb-2">
+              Subject : {pdf.subject}
+            </h3>
+            <p className="text-gray-400 text-sm">
+              Department : {question.department}
+            </p>
+            <p className="text-gray-400 text-sm">Year : {question.year}</p>
+            <p className="text-gray-400 text-sm">
+              Semester : {question.semester}
+            </p>
+            <a
+              href={pdf.url}
+              target="_blank"
+              className="inline-block mt-4 bg-indigo-600 px-4 py-2 rounded-lg hover:bg-indigo-700"
+            >
+              Download PDF
+            </a>
+          </div>
+        ))
+      )}
+    </>
+  );
+}
