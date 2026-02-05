@@ -70,7 +70,7 @@ export function Header() {
             <span className="font-mono ml-2 text-2xl bg-neutral-700 rounded-lg px-2" onClick={() => setOpenNavbar(false)}>X</span>
           }
 
-          <ul className={openNavbar? "absolute top-13 p-3 right-0 bg-neutral-900 w-full text-2xl flex flex-col justify-center text-center gap-5 transition-all duration-200 z-30" : "absolute top-13 -right-25 hidden"}>
+          <ul className={openNavbar? "absolute top-13 p-3 right-0 bg-neutral-900 w-full text-lg font-medium flex flex-col justify-center text-center gap-4 transition-all duration-200 z-30" : "absolute top-13 -right-25 hidden"}>
             <li>
               <Link href="/" onClick={() => setOpenNavbar(false)}>Home</Link>
             </li>
