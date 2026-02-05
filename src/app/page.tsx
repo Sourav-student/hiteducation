@@ -5,7 +5,7 @@ export default function Home() {
     <main className="bg-zinc-950 text-white min-h-screen">
 
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-6 py-20 text-center">
+      <section className="max-w-6xl mx-auto px-6 py-8 text-center">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">
           HITEducation
         </h1>
@@ -14,7 +14,7 @@ export default function Home() {
           notes, PYQs, notices, and smart learning resources in one place.
         </p>
 
-        <div className="mt-6 flex justify-center gap-4">
+        <div className="mt-3 flex justify-center gap-4">
           <Link
             href="/register"
             className="bg-indigo-600 px-6 py-2 rounded-lg hover:bg-indigo-700 transition"
@@ -31,7 +31,7 @@ export default function Home() {
       </section>
 
       {/* Features */}
-      <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-3 gap-6">
+      <section className="max-w-6xl mx-auto p-6 grid md:grid-cols-3 gap-6">
 
         <div className="bg-neutral-900 p-6 rounded-xl">
           <h3 className="text-xl font-semibold mb-2">📚 Previous Year Questions</h3>
@@ -57,7 +57,7 @@ export default function Home() {
       </section>
 
       {/* Why Section */}
-      <section className="bg-neutral-900 py-16 px-6 text-center">
+      <section className="bg-neutral-900 px-6 py-10 text-center">
         <h2 className="text-3xl font-semibold mb-4">
           Why HITEducation?
         </h2>
@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       {/* CTA */}
-      <section className="py-15 text-center flex flex-col gap-2 items-center">
+      <section className="py-10 text-center flex flex-col gap-2 items-center">
         <h2 className="text-3xl font-bold mb-4">
           Start Learning Smarter Today
         </h2>
