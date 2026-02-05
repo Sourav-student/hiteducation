@@ -49,7 +49,22 @@ export default function PdfCard({ year, semester, department }: QueryType) {
   }, [year, semester, department]);
 
   if (loading) {
-    return <p className="text-neutral-400">Loading PDFs...</p>;
+    return (
+      <div className="space-y-4">
+        {[1, 2, 3].map((i) => (
+          <div
+            key={i}
+            className="bg-neutral-900 p-6 rounded-xl border border-neutral-800 animate-pulse"
+          >
+            <div className="h-5 w-1/2 bg-neutral-700 rounded mb-3" />
+            <div className="h-4 w-1/3 bg-neutral-700 rounded mb-1" />
+            <div className="h-4 w-1/4 bg-neutral-700 rounded mb-1" />
+            <div className="h-4 w-1/3 bg-neutral-700 rounded mb-4" />
+            <div className="h-9 w-32 bg-neutral-700 rounded-lg" />
+          </div>
+        ))}
+      </div>
+    );
   }
 
   if (allQuestions.length === 0) {
@@ -67,6 +82,7 @@ export default function PdfCard({ year, semester, department }: QueryType) {
             <h3 className="font-semibold text-lg mb-2">
               Subject : {pdf.subject}
             </h3>
+
             <p className="text-gray-400 text-sm">
               Department : {question.department}
             </p>
@@ -74,6 +90,7 @@ export default function PdfCard({ year, semester, department }: QueryType) {
             <p className="text-gray-400 text-sm">
               Semester : {question.semester}
             </p>
+
             <a
               href={pdf.url}
               target="_blank"

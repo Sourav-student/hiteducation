@@ -12,9 +12,9 @@ export default function Questions() {
   const [isSearch, setIsSearch] = useState(false);
 
   return (
-    <main className="min-h-[92vh] bg-zinc-950 text-white px-6 py-12">
+    <main className="min-h-[93vh] bg-zinc-950 text-white p-6">
       {/* Page Header */}
-      <div className="max-w-6xl mx-auto mb-10">
+      <div className="max-w-6xl mx-auto mb-5">
         <h1 className="text-3xl font-bold">Previous Year Questions</h1>
         <p className="text-gray-400 mt-1">
           Browse semester-wise and subject-wise question papers
@@ -98,7 +98,7 @@ export default function Questions() {
           <PdfCard year={allQuary.year} semester={allQuary.semester} department={allQuary.department}/>
         </div>
         :
-        <p className="text-center text-neutral-400 mt-10">
+        <p className="text-center text-neutral-400 mt-5">
           Select Semester, Department, and Academic Year to view questions
         </p>
       }
