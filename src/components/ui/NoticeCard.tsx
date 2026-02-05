@@ -54,7 +54,7 @@ export default function NoticeCard() {
 
   return (
     <>
-      {allNotices.map((notice) => (
+      {allNotices.reverse().map((notice) => (
         <div
           key={notice._id}
           className="bg-neutral-900 rounded-xl p-5 border border-neutral-800 hover:border-indigo-600 transition"

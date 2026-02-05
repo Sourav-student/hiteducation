@@ -74,7 +74,7 @@ export default function PdfCard({ year, semester, department }: QueryType) {
 
   return (
     <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-      {allQuestions.map((question) =>
+      {allQuestions.reverse().map((question) =>
         question.pdfs.map((pdf, index) => (
           <div
             key={`${question._id}-${index}`}
