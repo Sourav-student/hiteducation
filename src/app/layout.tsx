@@ -26,8 +26,8 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider
-      signInForceRedirectUrl="/profile"
-      signUpForceRedirectUrl="/profile"
+      signInForceRedirectUrl="/"
+      signUpForceRedirectUrl="/"
       afterSignOutUrl="/"
     >
       <html lang="en">

@@ -16,13 +16,13 @@ export default function Home() {
 
         <div className="mt-3 flex justify-center gap-4">
           <Link
-            href="/register"
+            href="/notices"
             className="bg-indigo-600 px-6 py-2 rounded-lg hover:bg-indigo-700 transition"
           >
             Get Started
           </Link>
           <Link
-            href="/pyqs"
+            href="/questions-bank"
             className="border border-gray-600 px-6 py-2 rounded-lg hover:bg-gray-800 transition"
           >
             Explore PYQs
@@ -75,7 +75,7 @@ export default function Home() {
         </h2>
 
         <Link
-          href="/register"
+          href="/login"
           className="bg-indigo-600 px-8 py-3 rounded-xl text-lg hover:bg-indigo-700 transition w-fit"
         >
           Join HITEducation
