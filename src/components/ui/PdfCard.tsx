@@ -29,6 +29,7 @@ export default function PdfCard({ year, semester, department }: QueryType) {
     if (!year || !semester || !department) return;
 
     const getAllPdfs = async () => {
+      setAllQuestions([]);
       try {
         setLoading(true);
 
@@ -68,11 +69,11 @@ export default function PdfCard({ year, semester, department }: QueryType) {
   }
 
   if (allQuestions.length === 0) {
-    return <p className="text-neutral-500">No PDFs found</p>;
+    return <p className="text-neutral-500 w-full text-center text-xl">No PDFs found</p>;
   }
 
   return (
-    <>
+    <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
       {allQuestions.map((question) =>
         question.pdfs.map((pdf, index) => (
           <div
@@ -101,6 +102,6 @@ export default function PdfCard({ year, semester, department }: QueryType) {
           </div>
         ))
       )}
-    </>
+    </div>
   );
 }

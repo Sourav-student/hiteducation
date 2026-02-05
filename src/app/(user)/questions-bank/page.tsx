@@ -94,9 +94,7 @@ export default function Questions() {
 
       {/* Question Cards */}
       {isSearch ?
-        <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
           <PdfCard year={allQuary.year} semester={allQuary.semester} department={allQuary.department}/>
-        </div>
         :
         <p className="text-center text-neutral-400 mt-5">
           Select Semester, Department, and Academic Year to view questions
