@@ -9,7 +9,7 @@ export function Header() {
   const [openNavbar, setOpenNavbar] = useState(false);
 
   return (
-    <header className="bg-neutral-900 w-full shadow-md sticky top-0 rounded-b-xl">
+    <header className="bg-neutral-900 w-full shadow-md sticky top-0 rounded-b-xl z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-4 py-3 text-white">
         <Link href="/" className="text-2xl font-semibold tracking-wide">
           HITEducation
